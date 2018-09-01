@@ -35,6 +35,35 @@
         width: 100%;
 
     }
+    .meny{
+        /*position:-webkit-sticky;*/ /* Safari browser */
+        position: absolute;
+        top:0;
+        right: 5%;
+        margin: 0;
+
+    }
+    .meny ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+
+
+    }
+    .meny li{
+        float: left;
+        text-align: center;
+    }
+    .meny a{
+        color:white;
+        display: block;
+        padding: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 15pt;
+        
+    }
     .heading{
         position: relative;
         margin-top: 0;
@@ -74,6 +103,12 @@
 
 <body>
     <div class ="heading">
+        <div class="meny">
+            <ul>
+                <li><a href="#När">När</a></li>
+                <li><a href="#Info">Info</a></li>
+            </ul>
+        </div>
         <div class="rubrik">
             <h1>Georg och Frida </h1>         
         </div>
@@ -86,14 +121,14 @@
         </div>
     </div>
 
-    <div class="datumet">
+    <div class="datumet" id="När">
         <h2> Vi gifter oss 
         <br>  kl 15:00 den 28-06-2019
         <br> i Lidingö kyrka </h2>
 
     </div>
 
-   <div class="text">
+   <div class="text" id="Info">
         <p>
            Välkommen till Frida och Georgs bröllopssida!
            <br> Snart är det dags och du har troligtvis fått vårt "Save the date" mejl med länk till den här sidan.
