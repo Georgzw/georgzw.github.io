@@ -2,47 +2,246 @@
 <html>
 
 <head>
+<!-- Meta tags -->
 <meta   charset="UTF-8" 
         name="viewport"
-        content="width=device-width, initial-scale=1.0">
+        content="width=device-width, initial-scale=1.0,  shrink-to-fit=no">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
+<!-- Our Style sheet -->
 <link rel="stylesheet" type="text/css" href="style.css">
+
+<!-- Google fonts -->
 <link href ="https://fonts.googleapis.com/css?family=Niconne|Scada|Italianno|Arya|Jaldi|Katibeh|Mukta+Mahee|Overlock|Overpass+Mono|Padauk|Simonetta|Suravaram|Vollkorn|Wire+One" rel="stylesheet">
+
+<!-- Mapbox gl gs -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
+
+<!-- Title -->
 <title>Frida och Georg</title>
 </head>
-
-<body>
-    <div class ="heading">
-        <div class="rubrik">
-            <h1>Georg och Frida </h1>
-            <h2> Vi gifter oss 
-                <br> den 28-06-2019
-                <br> kl 15.00
-                <!-- <br> --> i Lidingö kyrka    
-             </h2>         
-        </div>
-
-        <div class= "bild">
-            <img    src="IMG_8199.JPG";
-                    alt="Frida och Georg på Hallskär 2017,
-                     foto Inga-lill von Zedtwitz-Liebenstein";
-                    style="max-width:100%;height:auto">
-        </div>
+<body style="background-color:hsl(345,   50%, 98%);">
+    <div class="container-fluid mx-auto p-0" style ="max-width: 1024px">
+    <div class="container-fluid mx-auto px-3">
+        
+        <div class="position-absolute">
+            </div>
+            <img src="images/header.jpg" class="img-fluid" style="width:100%; max-height:500px; object-fit: cover; object-position: 50% 100%">
     </div>
 
-   <div class="text" id="Info"> 
-       <h2>Information</h2>
-        <p>
-           Välkommen till Frida och Georgs bröllopssida!
-           <br> Snart är det dags och du har troligtvis fått vårt "Save the date" med länk till den här sidan.
-                Vi hoppas att just du kan komma och fira vår bröllopsdag med oss. Det skulle göra oss väldigt glada.
-            <br> 
-           <br> Här kommer ni kunna hitta all information om vårt bröllop och sidan kommer att uppdateras löpande med ny information ju närmare vi kommer.
-           <br> Nu har nedräkningen (officiellt) börjat!!
+    <!-- Välkomst text -->
+    <div class="container-fluid mx-auto px-3" >
+        <p class="bg-white text-center py-5 px-3 lead">
+        Välkommen till vårt bröllop den 28 juni 2019!
+        Vi börjar med vigseln som hålls i Lidingö kyrka kl 15.00 och därefter tar vi oss med gemensam transport till Långängensgård där vi bjuder in till en härlig fest.
+        På den här hemsidan hittar du allt du behöver veta inför den 28 juni, hur du svarar på inbjudan, vad klädkod kavaj betyder och vart du kan vända dig om du har några frågor.
+        Vi kommer att publicera mer detaljerad information under våren. 
+        <br>Vi ses den vackraste fredagen i juni - Frida och Georg.
         </p>
     </div>
+    
+    <!-- OSA -->
+    <div class="container-fluid mx-auto px-3" >
+        <div class="bg-white">
+            <div class="row mt-0 align-items-center px-3" style="min-height:400px">
+                <div class="col-sm mr-3 order-sm-2">
+                    <h1 class="display-4"> Svara på inbjudan </h1>
+                    <p class="lead">
+                            Senast den 15 maj 2019 ska du ha meddelat om du kommer eller inte, gör det genom att klicka på knappen nedan!
+                    </p>
+                    <a href="https://goo.gl/forms/n9KzD72ISBmhsmaz1" class="btn btn-secondary btn-lg" role="button" aria-disabled="true" target="_blank">Svara</a>
+                </div>
+                <div class="col-sm my-3 order-sm-1">
+                        <img src="images/Card.jpg" class="img-fluid shadow mx-auto d-block" style="max-width:70%;">
+                    </div>
+            </div>
+        </div>
+    </div>
 
-       <div class ="klocka">
+    <!-- Tal -->
+    <div class="container-fluid mx-auto px-3 " >
+                <div class="bg-white">
+                    <div class="row mt-0 align-items-center px-3" style="min-height:400px">
+                        <div class="col-sm order-sm-1">
+                                <h1 class="display-4"> Tal och spektakel </h1>
+                                <p class="lead">
+                                    För att kvällen ska flyta på så bra som möjligt så önskar vi att alla tal eller andra spektalkel anmäls till den eminente toastmastern Jonas Barrskog.
+                                    Det görs enklast genom att skicka epost till Jonas på: <a id="mailJonas"></a>
+                                </p>    
+                        </div>
+                        <div class="col-sm my-3 order-sm-2">
+                                <img src="images/jonasTest.jpg" class="img-fluid shadow mx-auto d-block rounded" style="max-width:70%;">
+                        </div>
+                    </div>
+                </div>
+    </div>
+
+    <!-- Klädkod -->
+    <div class="container-fluid mx-auto px-3" >
+                    <div class="bg-white">
+                        <div class="row mt-0 align-items-center px-3" style="min-height:400px">
+                            <div class="col-sm order-sm-2">
+                                    <h1 class="display-4"> Klädkod Kavaj </h1>
+                                    <p class="lead">
+                                        Kavaj är numera den minst strikta av vedertagna klädkoder. Det innebär hel kostym, klänning, kjol, dräkt eller byxdress som är elegantare än vanlig vardagsklädsel.
+                                        Kostymen kan vara mörk eller ljus, skjortan bör vara ljus. Fluga kan användas istället för slips. Klänning eller kjol bör vara minst knälång.
+                                    </p>
+                            </div>
+                            <div class="col-sm my-3 order-sm-1">
+                                    <img src="images/uppklätt.jpg" class="img-fluid shadow mx-auto d-block rounded" style="max-width:60%;">
+                                </div>
+                        </div>
+                    </div>
+    </div>
+    
+    <!-- Presenter -->
+    <div class="container-fluid mx-auto px-3" >
+                <div class="bg-white">
+                    <div class="row mt-0 align-items-center px-3" style="height:400px">
+                        <div class="col-sm order-sm-1">
+                                <h1 class="display-4">Presenter </h1>
+                                <p class="lead">
+                                    Det vi vill är att få fira vår stora dag tillsammans med alla er som betyder så mycket för oss därför önskar vi oss inte några saker utan istället ett kuvertbidrag till vår härliga bröllopsfest.
+                                    <!--Det enklaste sättet att skicka ett bidrag är att swisha.-->
+                                    <br>Mer information om hur kommer inom kort.
+
+                                </p>
+                            </div>
+                        <div class="col-sm order-sm-2">
+                            <img src="images/white.jpg" class="img-fluid mx-auto d-block rounded" style="max-width:70%;">
+                        </div>
+                    </div>
+                </div>
+    </div>
+
+    <!-- Transport -->
+    <!-- <div class="container-fluid mx-auto px-3" >
+            <div class="bg-white">
+                <div class="row mt-0 align-items-center px-3" style="height:400px">
+                    <div class="col-sm order-sm-2">
+                            <h1 class="display-4"> Transport </h1>
+                            <p class="lead">
+                                Information kommer inom kort.   
+                                     Var och en får själv ordna med transport till Lidingö kyrka respektive från Långängensgård. Vi kommer ordna med en gemensam transport mellan kyrkan och gården. <br>
+
+                                    Transport till Lidingö kyrka
+                                    Kommunalt åker man lättast med buss från Ropsten till hållplatsen Kvarnen, sedan är det enbart ca 200 meter att gå till kyrkan från busshållplatsen. <br>
+                                    
+                                    Tar man bilen så finns det gott om parkering nedanför kyrkan. OBS man bör inte parkera uppe vid kyrkan då det kan bli trångt för bussen som ska ta alla våra fina gäster till bröllopsfesten att vända. På parkeringen nedanför kyrkan kan man låta bilen stå över natten, då parkerings möjligheterna vid Långängensgård är begränsade.<br>
+                                    
+                                    Transport från Långängensgård
+                                    Härifrån är det långt ifrån alla kommunala förbindelser och vi rekommenderar att man delar på en taxi till Ropsten eller hem/till hotell om man valt att övernatta.<br>
+                                    
+                                    Har man tagit med bilen till gården går det enligt gårdsägaren bra att parkera bilen här över natten men då det är “bröllopssäsong” vill de att man hämtar bilen senast eftermiddagen dagen efter. Annars finns det risk att den lilla parkeringen som finns blir överfull. Om ni tar bilen hit och ska åka hem på kvällen, kolla gärna om det är någon som ni kan ta med till Ropsten.<br>
+                                    
+                                    Övernattning?
+                                    Om det blir för långt att åka hem på kvällen så rekommenderar vi att man bokar en övernattning på något av de hotell som finns på Lidingö. Ett exempel på hotell som ligger nära är Scandic Foresta.<br>
+                                    
+                            </p>
+                    </div>
+                    <div class="col-sm order-sm-1">
+                            <img src="images/white.jpg" class="img-fluid mx-auto d-block rounded" style="max-width:70%;">
+                        </div>
+                </div>
+            </div>
+    </div> -->
+
+    <!-- Frågor -->
+    <div class="container-fluid mx-auto px-3" >
+                    <div class="bg-white">
+                        <div class="row mt-0 align-items-center px-3" style="height:400px">
+                            <div class="col-sm order-sm-2">
+                                    <h1 class="display-4"> Frågor? </h1>
+                                    <p class="lead">
+                                        Om ni har några flera praktiska frågor som inte informationen ovan gett svar på kontakta då oss eller vårt fina värdpar:
+                                        <br>Anton Olofsson på 076-849 84 59
+                                        <br>Sofia Mild på 076-247 01 85
+                                        <br>Eftersom det troligen kommer bli mycket för oss ju närmare vi kommer vårt datum så ber vi er att i första hand kontakta värdparet, efter april månad.
+                                    </p>
+                            </div>
+                            <div class="col-sm order-sm-1">
+                                    <img src="images/white.jpg" class="img-fluid mx-auto d-block rounded" style="max-width:70%;">
+                                </div>
+                        </div>
+                    </div>
+    </div>
+
+    <!-- Karta -->   
+    <div class="container-fluid  mx-auto px-3">
+        <div id='map' style="position: relative;"></div>
+        <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZ2Vvcmd6dyIsImEiOiJjajNwcHJwczQwMDE5MzJxZHQxNjZwMDRlIn0.v7lp4zFYs9VL-972Ag7ZDg';
+        const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/georgzw/cjrl0esm8422o2snmlz4tj3w0',
+        center: [18.176,59.363],
+        zoom: 11.5
+        });
+
+        map.getCanvas().style.position  = 'static'
+        
+        map.on('load',function(){
+            // Poi data as a geojson object
+            poiData =  {
+                            "type": "FeatureCollection",
+                            "features": [{
+                                "type": "Feature",
+                                "properties": {
+                                    "name": "Lidingö Kyrka",
+                                    "icon": "jewelry-store-15"
+                                },
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": [18.157331, 59.366730]
+                                }},
+                                {
+                                "type": "Feature",
+                                "properties": {
+                                    "name": "Långängensgård",
+                                    "icon": "restaurant-15"
+                                },
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": [18.193507, 59.357204]
+                                }}
+                            ]
+                        }
+            //Create a new source            
+            map.addSource('poiData', {
+                "type": "geojson",
+                "data": poiData
+            });
+
+            //Create new map layer
+            map.addLayer({
+                "id": "poiLayer",
+                "type": "symbol",
+                "source": "poiData",
+                "layout": {
+                    "icon-image":['get', 'icon'],
+                    "icon-allow-overlap": true,
+                    "text-field": ['get', 'name'],
+                    "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
+                    "text-size": 11,
+                    "text-letter-spacing": 0.05,
+                    "text-offset": [0, 1.5]
+                },
+                "paint": {
+                    "text-color": "#202",
+                    "text-halo-color": "#fff",
+                    "text-halo-width": 2
+                }
+                });
+
+        });
+        </script>     
+        
+    </div>
+</div>
+    <!-- Nedräkning -->
+    <div class ="klocka">
 
         <p id="nedräkning">
         </p>
@@ -77,9 +276,17 @@
                     }
                 }, 1000);
                 </script>
-   </div> 
+    </div>
+</div>
    
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
+<!-- Contact details -->
+<script src="scripts/contact.js"></script>
 </body>
 
 </html>

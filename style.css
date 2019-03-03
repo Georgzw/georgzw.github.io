@@ -81,6 +81,13 @@ div {
     color: var(--main-font-color);
 }
 
+#map{
+    height: 60vh;
+    border: none;
+    text-align: center;
+    margin:auto
+}   
+
 /* For desktop: */
 @media only screen and (min-width: 768px) {
     .text { 
